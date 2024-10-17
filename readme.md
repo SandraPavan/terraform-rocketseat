@@ -8,7 +8,7 @@ Antes de começar, você precisa ter as seguintes ferramentas instaladas:
 
 - [Terraform](https://www.terraform.io/downloads.html)
 - [Git](https://git-scm.com/)
-- Credenciais para o provedor de nuvem (ex: AWS, Azure, Google Cloud)
+- Credenciais para o provedor AWS
 
 ## Estrutura do Projeto
 
@@ -42,18 +42,7 @@ git clone https://github.com/SandraPavan/terraform-rocketseat.git
 cd terraform-rocketseat
 ```
 
-### 2. Configurar as Variáveis
-
-As variáveis são definidas no arquivo `variables.tf`. Você pode sobrescrever esses valores no arquivo `terraform.tfvars` (este arquivo geralmente não é versionado para proteger dados sensíveis).
-
-Exemplo de `terraform.tfvars`:
-
-```hcl
-region       = "us-west-1"
-instance_type = "t2.micro"
-```
-
-### 3. Inicializar o Terraform
+### 2. Inicializar o Terraform
 
 Execute o seguinte comando para inicializar o Terraform e baixar os provedores necessários:
 
@@ -61,7 +50,27 @@ Execute o seguinte comando para inicializar o Terraform e baixar os provedores n
 terraform init
 ```
 
-### 4. Executar um Plano
+### 3. Validar a Configuração
+
+Antes de executar o plano ou aplicar as mudanças, é uma boa prática validar sua configuração para verificar se está tudo correto. Para isso, execute:
+
+```bash
+terraform validate
+```
+
+Este comando irá verificar se os arquivos estão corretos, se as sintaxes estão adequadas e se as variáveis e módulos estão corretamente configurados.
+
+### 4. Formatar o Código
+
+Para manter a consistência do código Terraform, utilize o comando de formatação para garantir que o estilo e a indentação estejam corretos:
+
+```bash
+terraform fmt
+```
+
+Esse comando ajusta automaticamente o estilo do código Terraform para as melhores práticas.
+
+### 5. Executar um Plano
 
 Antes de aplicar as mudanças, é importante revisar o que será criado ou modificado. Para isso, utilize o comando:
 
@@ -69,7 +78,7 @@ Antes de aplicar as mudanças, é importante revisar o que será criado ou modif
 terraform plan
 ```
 
-### 5. Aplicar as Mudanças
+### 6. Aplicar as Mudanças
 
 Para provisionar a infraestrutura conforme definido nos arquivos `.tf`, execute:
 
@@ -79,7 +88,7 @@ terraform apply
 
 Confirme a operação digitando `yes` quando solicitado.
 
-### 6. Destruir a Infraestrutura
+### 7. Destruir a Infraestrutura
 
 Se precisar remover a infraestrutura provisionada, use o seguinte comando:
 
