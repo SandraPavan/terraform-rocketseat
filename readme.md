@@ -13,7 +13,7 @@ Antes de começar, você precisa ter as seguintes ferramentas instaladas:
 ## Estrutura do Projeto
 
 ```
-/projeto-terraform
+/terraform-rocketseat
 │
 ├── /modules                 
 │   ├── /cloudfront              
